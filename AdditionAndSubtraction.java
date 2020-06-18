@@ -17,11 +17,14 @@ public class AdditionAndSubtraction {
         List<Integer> list = new ArrayList();
         list.add(0);
         int i = 1;
-        if (x == z) {
+        if (z == 0) {
             result = 0;
-        } else if (x > y) {
+        } else if (x == z) {
+            result = 1;
+        } else {
+            int idx = 1;
             while (true) {
-                if (list.get(i - 1) > z && list.get(i - 2) > z) {
+                if (idx > 2000) {
                     break;
                 }
                 int first = list.get((2 * i) - 2) + x;
@@ -38,12 +41,10 @@ public class AdditionAndSubtraction {
                 }
                 list.add(second);
                 i += 1;
+                idx++;
             }
         }
 
-        for(int item : list) {
-            out.println(item);
-        }
         out.println(result);
 
         in.close();
