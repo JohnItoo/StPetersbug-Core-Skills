@@ -16,6 +16,7 @@ public class StraightFlush {
         int kingIdx = -1;
         String input = in.nextLine();
         String[] inputArray = input.split(" ");
+
         for (int i = 0; i < 5; i++) {
             String card = inputArray[i];
             if (trailing != 'z' && trailing != card.charAt(1)) {
@@ -28,6 +29,7 @@ public class StraightFlush {
             if (card.charAt(0) == 'K') kingIdx = i;
         }
         String ans = "YES";
+        String[] deck = {"00", "00", ""}
         if (isSameSuit) {
             if (aIdx != -1) {
                 if ((kingIdx != -1 && aIdx > kingIdx) || (twoIdx != -1 && aIdx < twoIdx ))
