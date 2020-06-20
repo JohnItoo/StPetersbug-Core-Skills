@@ -9,7 +9,7 @@ public class StraightFlush {
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        String  c = in.nextLine();
+        String c = in.nextLine();
 
         String[] cards = c.split(" ");
         char suit = '0';
@@ -23,38 +23,34 @@ public class StraightFlush {
             cards[i] = card;
         }
         if (!ans.equals("NO")) {
-            List<String> chars = new ArrayList();
+            List<Integer> chars = new ArrayList();
             boolean ace = false;
             for (int i = 0; i < 5; i++) {
                 char curr = cards[i].charAt(0);
                 if (curr == 'T') {
-                    chars.add("10");
+                    chars.add(10);
                 } else if (curr == 'J') {
-                    chars.add("11");
+                    chars.add(11);
                 } else if (curr == 'Q') {
-                    chars.add("12");
+                    chars.add(12);
                 } else if (curr == 'K') {
-                    chars.add("13");
+                    chars.add(13);
+                } else if (curr == 'A') {
+                    chars.add(14);
                 } else {
-                    if (curr == 'A') ace = true;
-                    chars.add(String.valueOf(curr));
+                    chars.add(Integer.parseInt(String.valueOf(curr)));
                 }
             }
             Collections.sort(chars);
-            int limit = ace ? 4 : 5;
-            int st = Integer.parseInt(chars.get(0));
-            for (int i = 1; i < limit; i++) {
-                if (st + 1 != Integer.parseInt(chars.get(i))) {
-                    ans = "NO";
-                }
-                st = Integer.parseInt(chars.get(i));
-            }
 
-            if (!ans.equals("NO") && ace) {
-                ans = (chars.get(0).equals("2") || chars.get(3).equals("13")) ? "YES" : "NO";
+            for (int i = 0; i < 4; i++) {
+                if (chars.get(i) + 1 != chars.get(i + 1)) {
+                    if ((chars.get(0) != 2 || chars.get(4) != 14 || i < 3)) {
+                        ans = "NO";
+                    }
+                }
             }
         }
-
         out.println(ans);
         in.close();
         out.close();
