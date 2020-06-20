@@ -8,18 +8,21 @@ public class StraightFlush {
     public static void main(String[] arg) {
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
-        String[] cards = new String[5];
+
+        String  c = in.nextLine();
+
+        String[] cards = c.split(" ");
         char suit = '0';
         String ans = "YES";
         for (int i = 0; i < 5; i++) {
-            String card = in.nextLine();
+            String card = cards[i];
             if (suit != '0' && suit != card.charAt(1)) {
                 ans = "NO";
             }
             suit = card.charAt(1);
             cards[i] = card;
         }
-        if (ans != "NO") {
+        if (!ans.equals("NO")) {
             List<String> chars = new ArrayList();
             boolean ace = false;
             for (int i = 0; i < 5; i++) {
@@ -38,12 +41,21 @@ public class StraightFlush {
                 }
             }
             Collections.sort(chars);
-            for (int i = 0; i < 5; i++) {
+            int limit = ace ? 4 : 5;
+            int st = Integer.parseInt(chars.get(0));
+            for (int i = 1; i < limit; i++) {
+                if (st + 1 != Integer.parseInt(chars.get(i))) {
+                    ans = "NO";
+                }
+                st = Integer.parseInt(chars.get(i));
+            }
 
+            if (!ans.equals("NO") && ace) {
+                ans = (chars.get(0).equals("2") || chars.get(3).equals("13")) ? "YES" : "NO";
             }
         }
 
-        out.println();
+        out.println(ans);
         in.close();
         out.close();
     }
