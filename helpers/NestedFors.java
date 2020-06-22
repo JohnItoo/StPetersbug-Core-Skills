@@ -1,3 +1,5 @@
+package helpers;
+
 public class NestedFors {
     public static void main(String[] args) {
         familiarNestedFors(3, 0, new char[3]);
