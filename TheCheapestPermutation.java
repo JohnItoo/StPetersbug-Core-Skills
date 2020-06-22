@@ -18,7 +18,7 @@ public class TheCheapestPermutation {
 
         int[] result = new int[n];
         int[] tent = new int[n];
-        
+
         permute(0, n, result, tent, a);
 
         for (int i = 0; i < result.length; ++i) {
