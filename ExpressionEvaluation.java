@@ -10,13 +10,13 @@ public class ExpressionEvaluation {
         s = in.nextLine();
         int lastStart = 0;
         char lastStruct = 'c';
-        int result = 0;
+        long result = 0L;
         for(int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '-' || s.charAt(i) == '+' || i == s.length()-1) {
                 int lastEnd = i;
                 if(i == s.length() -1) lastEnd = s.length();
                 String sub = s.substring(lastStart, lastEnd);
-                int curr = Integer.parseInt(sub);
+                long curr = Long.parseLong(sub);
                if(lastStruct == 'c' || lastStruct == '+') {
                    result += curr;
                } else {
