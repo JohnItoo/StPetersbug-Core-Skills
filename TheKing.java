@@ -9,15 +9,18 @@ public class TheKing {
         int r, c;
         r = in.nextInt();
         c = in.nextInt();
-
+        int[][] board = new int[r][c];
         int result = 0;
 
         // your code
-        placei, j)
+        place(0, 0, r,c, board);
 
         out.println(result);
 
         in.close();
         out.close();
+    }
+    static int place(int r, int c, int rows, int cols, int[][] board, int kings) {
+        if(r == rows && )
     }
 }
