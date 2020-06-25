@@ -16,11 +16,11 @@ public class SumOfMinimums {
             a[i] = x;
         }
 
-        int result = 0;
+        long result = 0L;
 
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
-                int locmin = 1000001;
+               long locmin = 1000001L;
                 for (int k = i; k <= j; k++) {
                     locmin = Math.min(locmin, a[k]);
                 }
