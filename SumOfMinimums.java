@@ -20,7 +20,7 @@ public class SumOfMinimums {
 
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
-               long locmin = 1000001L;
+                long locmin = 1000001L;
                 for (int k = i; k <= j; k++) {
                     locmin = Math.min(locmin, a[k]);
                 }

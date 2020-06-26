@@ -11,27 +11,24 @@ public class ExpressionEvaluation {
         int lastStart = 0;
         char lastStruct = 'c';
         long result = 0L;
-        for(int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '-' || s.charAt(i) == '+' || i == s.length()-1) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '-' || s.charAt(i) == '+' || i == s.length() - 1) {
                 int lastEnd = i;
-                if(i == s.length() -1) lastEnd = s.length();
+                if (i == s.length() - 1) lastEnd = s.length();
                 String sub = s.substring(lastStart, lastEnd);
                 long curr = Long.parseLong(sub);
-               if(lastStruct == 'c' || lastStruct == '+') {
-                   result += curr;
-               } else {
-                   result -= curr;
-               }
-                lastStart = i+1;
+                if (lastStruct == 'c' || lastStruct == '+') {
+                    result += curr;
+                } else {
+                    result -= curr;
+                }
+                lastStart = i + 1;
                 lastStruct = s.charAt(i);
 
             }
         }
 
-        // your code
-
         out.println(result);
-
         in.close();
         out.close();
     }
