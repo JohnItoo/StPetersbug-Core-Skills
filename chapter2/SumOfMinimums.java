@@ -1,3 +1,5 @@
+package chapter2;
+
 import java.io.PrintWriter;
 import java.util.Scanner;
 
