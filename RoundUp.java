@@ -6,17 +6,11 @@ public class RoundUp {
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        long x;
-        long y;
-        x = in.nextLong();
-        y = in.nextLong();
-        long z = (long) -10e9;
-
-            while(y*z <x) {
-                z += 1;
-//                out.println(z);
-            }
-            out.println(z);
+        double x;
+        double y;
+        x = in.nextDouble();
+        y = in.nextDouble();
+        out.println((int) Math.ceil(x/y));
 
 
         in.close();
