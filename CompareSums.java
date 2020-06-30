@@ -18,11 +18,14 @@ public class CompareSums {
             float curr = in.nextFloat();
             b[i] = b[i - 1] + curr;
         }
+        out.println(a[n]);
+        out.println(b[n]);
         if (b[n] - a[n] > 0.001f) {
             out.println("SUM(A)<SUM(B)");
-        } else if (a[n] - b[n] > 0.001f) {
+        } else if (a[n] - b[n] >=0.001f) {
             out.println("SUM(A)>SUM(B)");
         } else {
+
             out.println("SUM(A)=SUM(B)");
         }
 
