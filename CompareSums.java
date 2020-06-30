@@ -8,21 +8,21 @@ public class CompareSums {
 
         int n;
         n = in.nextInt();
-        float[] a = new float[n + 1];
+        int[] a = new int[n + 1];
         for (int i = 1; i <= n; i++) {
             float curr = in.nextFloat();
-            a[i] = a[i - 1] + curr;
+            a[i] = a[i - 1] + (int)(curr* 10000);
         }
-        float[] b = new float[n + 1];
+        int[] b = new int[n + 1];
         for (int i = 1; i <= n; i++) {
             float curr = in.nextFloat();
-            b[i] = b[i - 1] + curr;
+            b[i] = b[i - 1] + (int)(curr * 10000);
         }
-        out.println(a[n]);
-        out.println(b[n]);
-        if (b[n] - a[n] > 0.001f) {
+//        out.println(a[n]);
+//        out.println(b[n]);
+        if (b[n] > a[n]) {
             out.println("SUM(A)<SUM(B)");
-        } else if (a[n] - b[n] >=0.001f) {
+        } else if (a[n] > b[n]) {
             out.println("SUM(A)>SUM(B)");
         } else {
 
