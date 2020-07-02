@@ -2,19 +2,27 @@ package helpers;
 
 public class MaximumScalarProduct {
     /**
-     * Lemma; Two arrays a and b maximum scalar product.
-     * ai is max in a
+     * Lemma; Two arrays A and B maximum scalar product.
+     * ai is max in A
      * and
-     * bj is max in b
-     * let aq be another number in a
-     * and bx be another number in b
-     *  let S = (ai * bj) + (aq + bx);
-     * and S* = (ai * bx) + (aq*bj);
-     * We want to prove that S is greater than S*
+     * bj is max in B
+     * There exists an optimal solution where the largest element in a, ai, pairs with
+     * the largest element in b, bk;
+     * if optimum solution pairs ai and bj then we are done.
+     * But assuming we pair ai with some other number in B other than bj,
+     *  let S = (ai * bp) + (aq + bj) + ....
+     * and S* = (ai * bj) + (aq*bp) + ....;
+     * We want to prove that S* is not worse than S
      *
-     * S - S* (should be greater/equal to) >= 0;
-     * (aibj + aqbx )- (aibx +aqbj) >= 0
-     * (aibj -aibx) + (aqbx - aqbj) >= 0
+     * (S*) - (S) =
+     * (aibj + aqbp )- (aibp +aqbj)
+     * (S*) - (S) =  aibj + aqbp - aibp - aqbj
+     * ai(bj-bp) + aq(bp-bj) or ai(bj-bp) -aq(bj -bp)
+     * (ai- aq) (bj-bp)  is >= 0 because we are multiplying two positive integers  (ai >= aq) and (bj >=bp)
      *
+     */
+
+    /*
+     Code : pick 
      */
 }
