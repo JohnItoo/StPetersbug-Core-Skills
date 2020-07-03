@@ -1,17 +1,14 @@
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class RoundUp {
+public class TheMostFrequentSymbol {
     public static void main(String[] arg) {
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        double x;
-        double y;
-        x = in.nextDouble();
-        y = in.nextDouble();
-        out.println((int) Math.ceil(x/y));
-
+        int n;
+        n = in.nextInt();
+        
 
         in.close();
         out.close();

@@ -23,6 +23,6 @@ public class MaximumScalarProduct {
      */
 
     /*
-     Code : pick 
+     Code : pick
      */
 }
