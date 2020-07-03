@@ -17,7 +17,19 @@ public class TheMostFrequentSymbol {
             if(l == r) {
                 out.println(s.charAt(l-1));
             } else {
-                
+                int[] map = new int[26];
+                for(int j = l; j <= r; j++) {
+                    map[s.charAt(j-1) - 'a']++;
+                }
+                int max = 0;
+                int idx = -1;
+                for(int k = 0; k <26; k++) {
+                   if(map[k] >= max) {
+                       idx = k;
+                       max = map[idx];
+                   }
+                }
+                out.println((char) ('a' + idx));
             }
         }
 
