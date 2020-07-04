@@ -8,8 +8,11 @@ public class MaximumSubArray {
 
         int n;
         n = in.nextInt();
-        if(n%2 != 0) n+=1;
-        int
+        int len = 1;
+        while(len < n) {
+            len *= 2;
+        }
+        int[] segmentTree = new int[2*len];
 
         in.close();
         out.close();
