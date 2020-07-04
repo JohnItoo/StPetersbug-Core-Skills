@@ -10,28 +10,25 @@ public class TheMostFrequentSymbol {
         s = in.nextLine();
         int n;
         n = in.nextInt();
-        for(int i = 0; i < n ; i++) {
-            int l,r;
-            l = in.nextInt();
-            r = in.nextInt();
-            if(l == r) {
-                out.println(s.charAt(l-1));
-            } else {
-                int[] map = new int[26];
-                for(int j = l; j <= r; j++) {
-                    map[s.charAt(j-1) - 'a']++;
+        int[][] map = new int[26][n];
+        for (int i = 0; i < 26; i++) {
+            int occur = 0;
+            for (int j = 0; j < n; j++) {
+                if (s.charAt(j) == 'a' + i) {
+                    occur += 1;
                 }
-                int max = 0;
-                int idx = -1;
-                for(int k = 0; k <26; k++) {
-                   if(map[k] >= max) {
-                       idx = k;
-                       max = map[idx];
-                   }
-                }
-                out.println((char) ('a' + idx));
+                map[i][j] = occur;
             }
         }
+        for (int i = 0; i < n; i++) {
+            int l, r;
+            l = in.nextInt();
+            r = in.nextInt();
+            int currMax = 0;
+            for(int j = 0; j < )
+
+        }
+
 
         in.close();
         out.close();
