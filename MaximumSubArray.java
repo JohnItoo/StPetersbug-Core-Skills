@@ -28,18 +28,44 @@ public class MaximumSubArray {
         }
 
         out.println();
+
+        int arrIdx = ((segLen-1) - (len -1));
+        int st= arrIdx - (len/2);
+        makeSegmentTree(st, (len/2),  segmentTree);
         for(int i = 0; i < segLen; i++) {
             out.print(segmentTree[i] + " ");
         }
-//        makeSegmentTree((a - 1) -(n-1), n,  segmentTree);
 
+        out.println();
+        for(int i = arrIdx; i < segLen; i++) {
+            long ans = findMax(i, segmentTree, -1000001);
+            out.print(ans + " ");
+        }
         in.close();
         out.close();
     }
 
-//    private static void makeSegmentTree(long left, long times, long[] segmentTree) {
-//        if(start) {
-//
-//        }
-//    }
+    private static void makeSegmentTree(int left, int times, long[] segmentTree) {
+        int i = 0;
+        int beg = left;
+        while(i < times) {
+            i++;
+            segmentTree[beg] = segmentTree[beg*2] + segmentTree[(beg*2) + 1];
+            beg++;
+        }
+        if(left == 1) return;
+        int newLeft = left - (times/2);
+        makeSegmentTree(newLeft, times/2, segmentTree);
+    }
+
+    //traverses tree upwardly
+    private static long findMax(int start, long[] segmentTree, long currMax) {
+        if(start == 1) {
+            return Math.max(currMax, segmentTree[start]);
+        }
+        currMax = Math.max(currMax, segmentTree[start]);
+        
+        findMax(start/2, segmentTree, currMax);
+        return 0;
+    }
 }
