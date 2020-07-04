@@ -9,38 +9,39 @@ public class MaximumSubArray {
         int n;
         n = in.nextInt();
         int len = 1;
-        while(len < n) {
+        while (len < n) {
             len *= 2;
         }
-        int segLen = 2*len;
+        int segLen = 2 * len;
         long[] segmentTree = new long[segLen];
         int zeros = len - n;
-        int start = (segLen-1) - (len-1);
+        int start = (segLen - 1) - (len - 1);
         int rd = 0;
-        while(rd < n) {
+        while (rd < n) {
             segmentTree[start++] = in.nextLong();
             rd++;
         }
         int z = 0;
-        while(z < zeros) {
+        while (z < zeros) {
             segmentTree[start++] = 0;
             z++;
         }
 
         out.println();
 
-        int arrIdx = ((segLen-1) - (len -1));
-        int st= arrIdx - (len/2);
-        makeSegmentTree(st, (len/2),  segmentTree);
-        for(int i = 0; i < segLen; i++) {
+        int arrIdx = ((segLen - 1) - (len - 1));
+        int st = arrIdx - (len / 2);
+        makeSegmentTree(st, (len / 2), segmentTree);
+        for (int i = 0; i < segLen; i++) {
             out.print(segmentTree[i] + " ");
         }
 
         out.println();
-        for(int i = arrIdx; i < segLen; i++) {
+        for (int i = arrIdx; i < arrIdx + n; i++) {
             long ans = findMax(i, segmentTree, -1000001);
             out.print(ans + " ");
         }
+//        out.println(findMax(11, segmentTree,-1000001));
         in.close();
         out.close();
     }
@@ -48,24 +49,23 @@ public class MaximumSubArray {
     private static void makeSegmentTree(int left, int times, long[] segmentTree) {
         int i = 0;
         int beg = left;
-        while(i < times) {
+        while (i < times) {
             i++;
-            segmentTree[beg] = segmentTree[beg*2] + segmentTree[(beg*2) + 1];
+            segmentTree[beg] = segmentTree[beg * 2] + segmentTree[(beg * 2) + 1];
             beg++;
         }
-        if(left == 1) return;
-        int newLeft = left - (times/2);
-        makeSegmentTree(newLeft, times/2, segmentTree);
+        if (left == 1) return;
+        int newLeft = left - (times / 2);
+        makeSegmentTree(newLeft, times / 2, segmentTree);
     }
 
     //traverses tree upwardly
     private static long findMax(int start, long[] segmentTree, long currMax) {
-        if(start == 1) {
+        if (start == 1) {
             return Math.max(currMax, segmentTree[start]);
         }
+        System.out.println(segmentTree[start]);
         currMax = Math.max(currMax, segmentTree[start]);
-        
-        findMax(start/2, segmentTree, currMax);
-        return 0;
+        return findMax(start / 2, segmentTree, currMax);
     }
 }
