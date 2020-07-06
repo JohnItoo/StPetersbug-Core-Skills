@@ -12,7 +12,7 @@ public class YetAnotherSum {
         for (int i = 0; i < n; i++) {
             double x = in.nextDouble();
             wholeSum += x;
-            doubleSum += (1/x);
+            doubleSum += (1 / x);
         }
         out.println(wholeSum + doubleSum);
 
