@@ -16,7 +16,6 @@ public class YetAnotherSum {
         }
         out.println(wholeSum + doubleSum);
 
-
         in.close();
         out.close();
     }
