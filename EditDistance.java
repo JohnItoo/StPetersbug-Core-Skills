@@ -20,25 +20,22 @@ public class EditDistance {
         s = in.nextInt();
 
         int[][] dp = new int[n + 1][m + 1];
-        for (int a = 0; a <= n; a++) {
-            for (int b = 0; b <= m; b++) {
-                dp[a][b] = Integer.MAX_VALUE;
-            }
-        }
+//        for (int a = 0; a <= n; a++) {
+//            for (int b = 0; b <= m; b++) {
+//                dp[a][b] = Integer.MAX_VALUE;
+//            }
+//        }
         dp[0][0] = 0;
         for (int a = 0; a <= m; a++) {
-            dp[0][a] = i*a;
+            dp[0][a] = Math.max(d*a, i*a);
+
         }
         for (int a = 0; a <= n; a++) {
-            dp[a][0] =  i*a;
+            dp[a][0] =   Math.max(d*a, i*a);
         }
         for (int a = 1; a <= n; a++) {
             for (int b = 1; b <= m; b++) {
                 int diff = u.charAt(a - 1) == w.charAt(b - 1) ? 0 : s;
-//                dp[a][b] = Math.min(
-//                        Math.min(dp[a - 1][b] + d, dp[a - 1][b - 1] + diff),
-//                        Math.min(dp[a - 1][b] + d, dp[a][b - 1] + i)
-//               );
                 dp[a][b] = min(
                         min(dp[a - 1][b] + d, dp[a - 1][b - 1] + diff)
                         ,dp[a][b - 1] + i
