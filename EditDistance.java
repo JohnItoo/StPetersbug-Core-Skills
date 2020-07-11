@@ -27,10 +27,10 @@ public class EditDistance {
         }
         dp[0][0] = 0;
         for (int a = 0; a <= m; a++) {
-            dp[0][a] = 1;
+            dp[0][a] = i*a;
         }
         for (int a = 0; a <= n; a++) {
-            dp[a][0] = 1;
+            dp[a][0] =  i*a;
         }
         for (int a = 1; a <= n; a++) {
             for (int b = 1; b <= m; b++) {
