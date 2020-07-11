@@ -26,11 +26,11 @@ public class EditDistance {
 //            }
 //        }
         dp[0][0] = 0;
-        for (int a = 0; a <= m; a++) {
-            dp[0][a] = Math.max(d*a, i*a);
+        for (int a = 1; a <= m; a++) {
+            dp[0][a] = 
 
         }
-        for (int a = 0; a <= n; a++) {
+        for (int a = 1; a <= n; a++) {
             dp[a][0] =   Math.max(d*a, i*a);
         }
         for (int a = 1; a <= n; a++) {
