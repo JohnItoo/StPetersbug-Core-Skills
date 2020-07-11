@@ -5,8 +5,9 @@ public class LongestIncreasingSubsequence {
   static int[] prev = new int[1005];
     public static void main(String[] args) {
         int[] arr = {7, 2, 1, 3, 8, 4, 9, 1, 2, 6, 5, 9, 3, 8, 1};
+        int [] a = {5,4,3,2,1};
 //        recursive(arr);
-        iterative(arr);
+        iterative(a);
     }
 
     private static void recursive(int[] arr) {
