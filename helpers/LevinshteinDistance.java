@@ -20,7 +20,7 @@ public class LevinshteinDistance {
      */
 
     public static void main(String[] args) {
-        editDistance("polynomial", "exponential");
+        editDistance("editing", "distance");
     }
 
     private static void editDistance(String a, String b) {
@@ -39,7 +39,7 @@ public class LevinshteinDistance {
             for(int j = 1; j <= b.length(); j++) {
                 int diff = a.charAt(i-1) == b.charAt(j-1) ? 0 : 1;
                 ED[i][j] = Math.min( Math.min((ED[i-1][j] + 1), (ED[i-1][j-1] + diff)),
-                        Math.min((ED[i-1][j] + 1), (ED[i][j-1] + 1)));
+                        Math.min((ED[i-1][j] + 1), (ED[i][j-1] + 100)));
             }
         }
         System.out.println("The edit distance is " +  ED[a.length()][b.length()]);
