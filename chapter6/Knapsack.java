@@ -1,3 +1,5 @@
+package chapter6;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
