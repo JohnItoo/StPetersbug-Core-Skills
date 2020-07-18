@@ -1,4 +1,4 @@
-package helpers;
+package helpers.dp;
 
 public class Knapsack {
    static int[] dp = new int[100];

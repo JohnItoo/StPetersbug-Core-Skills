@@ -1,4 +1,4 @@
-package helpers;
+package helpers.dp;
 
 public class LevinshteinDistance {
     static int[][] ED = new int[10005][10005];

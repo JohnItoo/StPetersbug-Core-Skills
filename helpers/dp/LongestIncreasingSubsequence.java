@@ -1,4 +1,4 @@
-package helpers;
+package helpers.dp;
 
 public class LongestIncreasingSubsequence {
   static int[] mem = new int[10005];
