@@ -11,7 +11,8 @@ public class SumOfDigits {
 
          long[][] dp = new long[s+1][l+1];
 
-        for(int sum = 1; sum <= Math.min(s, 9); sum++) {
+
+        for(int sum = 0; sum <= Math.min(s, 9); sum++) {
             dp[sum][1] = 1;
         }
 
