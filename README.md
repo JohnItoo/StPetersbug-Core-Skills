@@ -1,6 +1,6 @@
 ## CP Core Skills 
-This is contains mostly correct solutions to the Competitive Programmers Core Skills course
-offered by ST Petersbug University, Russia on Coursera.
+This repository contains my solutions to the Competitive Programmers Core Skills course
+offered by ST Petersburg University, Russia on Coursera.
 
 **Credentials**
 
